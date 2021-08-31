@@ -31,9 +31,9 @@ class Scalar(OutputModel):
         super(Scalar, self).__init__(allow_prior_model=allow_prior_model)
         act_class = act_class_mapping[activation]
         self.output_network = nn.Sequential(
-            nn.Linear(hidden_channels, hidden_channels // 2),
+            nn.Linear(hidden_channels, hidden_channels),
             act_class(),
-            nn.Linear(hidden_channels // 2, 1),
+            nn.Linear(hidden_channels, 1),
         )
 
         self.reset_parameters()
