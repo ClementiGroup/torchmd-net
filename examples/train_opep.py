@@ -3,10 +3,10 @@
 
 # In[1]:
 
-from trainer import simple_train_loop
+from torchmdnet.datasets.trainer import simple_train_loop
 from torchmdnet.models import create_model
 from torch_geometric.data import DataLoader
-from in_mem_dataset import InMemoryDataset
+from torchmdnet.datasets.in_mem_dataset import InMemoryDataset
 import torch
 import torch.nn as nn
 import numpy as np
