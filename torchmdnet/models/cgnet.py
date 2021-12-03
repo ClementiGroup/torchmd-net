@@ -44,10 +44,7 @@ class CGnet(nn.Module):
         """
         data.pos.requires_grad_()
 
-        if isinstance(self.model, TorchMD_GN):
-            energy = self.model(data.z, data.pos, data.batch)
-        else:
-            energy = self.model(data)
+        energy = self.model(data.z, data.pos, data.batch)
 
         if isinstance(energy, tuple):
             energy, forces = energy
