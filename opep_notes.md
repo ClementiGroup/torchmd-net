@@ -9,7 +9,7 @@
 
 + main work folder `/net/data02/nickc/octapeptides`
 
-+ cg coords and forces using opep mapping `/net/data02/nickc/octapeptides/brooke_map_cg_data/`
++ cg coords and forces using opep mapping `/import/a12/users/nickc/opep_cg_mapped_data`
 
 
 # Torchmd net training workflow
