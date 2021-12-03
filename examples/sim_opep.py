@@ -25,21 +25,6 @@ try:
 except:
     raise RuntimeError('Please supply simulation parameter file.')
 
-try:
-    test_params = [{"ex_vol":1.0, "exp":6}]
-    call_backs = [1]
-    test_repulsion_layer = RepulsionLayer(call_backs, test_params)
-
-    #RepulsionLayer??
-
-    test_distance = torch.tensor([[1.]])
-    out=test_repulsion_layer(test_distance)
-    print(out)
-
-    assert out[0] == 1.0
-except:
-    raise RuntimeError("Repulsion out factor is not unity!")
-
 
 peptide_ids = sys.argv[2:]
 
@@ -79,8 +64,6 @@ for PEPTIDE_ID in peptide_ids:
     for prior in prior_set:
         priors += [prior.to(DEVICE)]
 
-#    net_model = torch.jit.load(NETWORK_MODEL).to(torch.device('cpu'))
-    #net_model = load_model(NETWORK_MODEL)
     with open(ARGS, "rb") as argfile:
         args = pkl.load(argfile)
     with open(NETWORK_MODEL, "rb") as modelfile:
