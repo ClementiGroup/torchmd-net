@@ -4,6 +4,10 @@ import numpy as np
 import torch
 from os.path import dirname, join, exists
 
+if is_notebook():
+    from tqdm.notebook import tqdm
+else:
+    from tqdm import tqdm
 
 def train_val_test_split(dset_len, train_size, val_size, test_size, seed, order=None):
     assert (train_size is None) + (val_size is None) + (
