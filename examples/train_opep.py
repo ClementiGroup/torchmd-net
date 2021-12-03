@@ -17,7 +17,7 @@ import logging
 import pickle
 from datetime import datetime
 
-model_name ='local_net_20_aa_5_blocks_64_physnet_res_exclusion_oct_min'
+model_name ='my_model'
 logging.basicConfig(level=logging.INFO, filename='{}.log'.format(model_name), filemode='a')
 
 #np.random.seed(1875432)
