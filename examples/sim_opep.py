@@ -1,10 +1,6 @@
-from torchmdnet.models import create_model
+from torchmdnet.models.model import create_model
 from torch_geometric.data import DataLoader
 from datetime import datetime
-from cgnet.feature import GeometryFeature
-from torchmdnet2.nn import BaselineModel
-from torchmdnet2.nn import CGnet
-from torchmdnet2.simulation import Simulation
 import json
 import os
 import torch.nn as nn
@@ -12,8 +8,6 @@ import torch
 import pickle as pkl
 import numpy as np
 import sys
-from cgnet.network import RepulsionLayer
-
 
 KBOLTZMANN = 1.38064852e-23
 AVOGADRO = 6.022140857e23

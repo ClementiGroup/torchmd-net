@@ -1,0 +1,17 @@
+{
+	"network_model": "local_net_20_aa_5_blocks_physnet_res_exclusion_oct_min_state_dict_epoch_8.pkl",
+    "args" : "local_net_20_aa_5_blocks_physnet_res_exclusion_oct_min_args.pkl",
+	"device_id": 2,
+	"n_sims": 100,
+	"save_interval": 10,
+	"n_timesteps": 1000000,
+	"export_interval": 100000,
+	"log_interval": 100000,
+	"dt": 0.004,
+	"friction": 1,
+	"temperature": 300,
+	"mass_scale": 418.3,
+    "prior_dictionary_tag": "prior_set_dictionary_res_exclusion_oct_min_repul_fix",
+    "tag": "localnet_20aa_physnet_res_exclusion_epoch_8",
+    "save_dir": "/local_scratch/nickc/peptide_sim_output/"
+}
