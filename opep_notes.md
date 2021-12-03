@@ -47,11 +47,12 @@ full_model.to(DEVICE)
 
 ### Optional
 
-+ get the data in a fast storage
++ get the latest (best priors) training/testting data in a fast storage
 
 ```
 mkdir opep_train_data
-mv /net/data02/nickc/oct_test_res_exclusion_oct_min_repul opep_train_data/
+mkdir opep_test_data
+mv /net/data02/nickc/oct_test_res_exclusion_oct_min_repul opep_test_data/
 mv /net/data02/nickc/oct_train_res_exclusion_oct_min_repul opep_train_data/
 
 ```
