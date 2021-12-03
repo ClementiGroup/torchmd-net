@@ -26,6 +26,25 @@ Refer to `/import/a12/users/nickc/example_best_opep_model` for a full model trai
 
 + run the script from your `new_training` folder (output will go there)
 
+
+## Build a model from the `.pckl` files
+
+```
+PATH = "/import/a12/users/nickc/example_best_opep_model/"
+ARGS = PATH+"local_net_20_aa_5_blocks_physnet_res_exclusion_oct_min_args.pkl"
+NETWORK_MODEL = PATH+"local_net_20_aa_5_blocks_physnet_res_exclusion_oct_min_state_dict_epoch_8.pkl"
+
+with open(ARGS, "rb") as argfile:
+    args = pkl.load(argfile)
+with open(NETWORK_MODEL, "rb") as modelfile:
+    state_dict = pkl.load(modelfile)
+net_model = create_model(args)
+net_model.load_state_dict(state_dict)
+baseline = BaselineModel(geom_feat, priors, n_beads=len(embeddings))
+full_model = CGnet(net_model, baseline)
+full_model.to(DEVICE)
+```
+
 ### Optional
 
 + get the data in a fast storage
