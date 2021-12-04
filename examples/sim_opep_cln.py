@@ -33,8 +33,7 @@ MASS_SCALE = sim_opts['mass_scale']
 SAVE_DIR = sim_opts['save_dir']
 TAG = sim_opts['tag']
 
-#DEVICE = torch.device('cuda', DEVICE_ID)
-DEVICE = torch.device('cpu')
+DEVICE = torch.device('cuda', DEVICE_ID)
 BETA = JPERKCAL/KBOLTZMANN/AVOGADRO/TEMPERATURE
 PRIOR_DICTIONARY_TAG = sim_opts['prior_dictionary_tag']
 
