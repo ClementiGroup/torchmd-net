@@ -11,6 +11,7 @@ def simple_train_loop(model, optimizer, loss_func,
                       starting_epoch=0,
                       num_epochs=30,
                       print_freq=10000,
+                      model_name="my_model",
                       device=torch.device('cpu')):
     """Simple training loop
 
@@ -28,6 +29,8 @@ def simple_train_loop(model, optimizer, loss_func,
         Number of epochs to train
     print_freq:
         Frequency for printing training output to stdoue
+    model_name:
+        model name
     device:
         torch.device which the model will be moved on and off of
         (between saving model state dicts)
@@ -116,6 +119,7 @@ def multi_gpu_train_loop(model, optimizer, loss_func,
                       num_epochs=30,
                       print_freq=10000,
                       device=torch.device('cpu'),
+                      model_name="my_model",
                       save_dir='./'):
     """Simple training loop. Assumes DataParallel object for model
 
@@ -138,6 +142,8 @@ def multi_gpu_train_loop(model, optimizer, loss_func,
     device:
         torch.device which the model will be moved on and off of
         (between saving model state dicts)
+    model_name:
+        model name
     save_dir:
         Directory in which results are saved
     """
