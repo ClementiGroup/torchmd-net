@@ -5,6 +5,7 @@ import torch.nn as nn
 import numpy as np
 from datetime import datetime
 import logging
+import pickle
 
 def simple_train_loop(model, optimizer, loss_func,
                       train_loader=None,
