@@ -615,7 +615,7 @@ class Simulation(object):
         dataloader = DataLoader(data_list, batch_size=self.batch_size, shuffle=False)
         for data in tqdm(dataloader, desc='Batch', leave=False):
             batch_size = data.n_atoms.shape[0]
-            # data.to(device=x_old.device)
+            data.to(device=x_old.device)
             pp, ff = self.model(data)
             potential[ii:ii+batch_size] = pp.flatten()
             forces[ii:ii+batch_size] = ff.view((batch_size, n_beads, 3))
