@@ -244,8 +244,7 @@ class CFConv(MessagePassing):
         self.lin2.bias.data.fill_(0)
 
     def forward(self, x, edge_index, edge_weight, edge_attr):
-        C = self.cutoff(edge_weight)
-        W = self.net(edge_attr) * C.view(-1, 1)
+        W = self.net(edge_attr)
 
         x = self.lin1(x)
         # propagate_type: (x: Tensor, W: Tensor)
