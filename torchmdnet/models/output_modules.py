@@ -40,9 +40,9 @@ class Scalar(OutputModel):
 
     def reset_parameters(self):
         nn.init.xavier_uniform_(self.output_network[0].weight)
-        self.output_network[0].bias.data.fill_(0)
+        #self.output_network[0].bias.data.fill_(0)
         nn.init.xavier_uniform_(self.output_network[2].weight)
-        self.output_network[2].bias.data.fill_(0)
+        #self.output_network[2].bias.data.fill_(0)
 
     def pre_reduce(self, x, v: Optional[torch.Tensor], z, pos, batch):
         return self.output_network(x)

@@ -205,12 +205,12 @@ class InteractionBlock(nn.Module):
 
     def reset_parameters(self):
         nn.init.xavier_uniform_(self.mlp[0].weight)
-        self.mlp[0].bias.data.fill_(0)
+        #self.mlp[0].bias.data.fill_(0)
         nn.init.xavier_uniform_(self.mlp[2].weight)
-        self.mlp[0].bias.data.fill_(0)
+        #self.mlp[0].bias.data.fill_(0)
         self.conv.reset_parameters()
         nn.init.xavier_uniform_(self.lin.weight)
-        self.lin.bias.data.fill_(0)
+        #self.lin.bias.data.fill_(0)
 
     def forward(self, x, edge_index, edge_weight, edge_attr):
         x = self.conv(x, edge_index, edge_weight, edge_attr)
@@ -241,7 +241,7 @@ class CFConv(MessagePassing):
     def reset_parameters(self):
         nn.init.xavier_uniform_(self.lin1.weight)
         nn.init.xavier_uniform_(self.lin2.weight)
-        self.lin2.bias.data.fill_(0)
+        #self.lin2.bias.data.fill_(0)
 
     def forward(self, x, edge_index, edge_weight, edge_attr):
         W = self.net(edge_attr)
